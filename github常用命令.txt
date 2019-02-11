@@ -24,8 +24,8 @@ git add .(" .代表所有文件，没有点可以直接写文件名.文件类型；列如：(domo.html)");
 3.把文件放在文件夹下，在git config --global user.name  名字    //设置名字
 4.git config --global user.email  邮箱  //设置邮箱
 5.git add . 或者 git add   文件名字.文件类型   一个一个的提交（慢）
-6.git commit -m -a
-7.git push -u origin master
+6.git commit -m ‘这里写文件的名字’
+7.git push 
 
 推送  .git pull origin master
 //以上为github上传从0到1的过程
