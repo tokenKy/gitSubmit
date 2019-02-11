@@ -1,0 +1,42 @@
+cd  **(文件名)：进入某个文件下;
+
+dir:查看该文件夹下的所有文件;
+
+cd e:  :进入e盘;
+
+git clone |-github网站的http地址-|   ：   下载github上面的文件;
+
+cd **(工程名)    ：   进入工程里面;
+
+git config --global user.name   "**(设置用户名)";
+
+git config --global user.email  "**(设置邮箱)";
+
+git config --list            :查看工程
+
+git add .(" .代表所有文件，没有点可以直接写文件名.文件类型；列如：(domo.html)");
+
+
+
+//
+1.新建个仓库，在本地电脑上建个文件夹，在github上面拿到url地址;git clone url地址
+2：进入文件夹有matser模式
+3.把文件放在文件夹下，在git config --global user.name  名字    //设置名字
+4.git config --global user.email  邮箱  //设置邮箱
+5.git add . 或者 git add   文件名字.文件类型   一个一个的提交（慢）
+6.git commit -m -a
+7.git push -u origin master
+
+推送  .git pull origin master
+//以上为github上传从0到1的过程
+
+
+
+
+
+
+
+
+
+
+**：没有"**"就是查看的意思;
