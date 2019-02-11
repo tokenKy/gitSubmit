@@ -1,0 +1,17 @@
+const http=require('http');
+const fs=require('fs');
+const url=require('url')
+const server=http.createServer(function(req,res){
+    //console.log('’‚ «http«Î«Û');
+    let file='./html'+url.parse(req.url).pathname
+    res.setHeader('content-type',"text/html;'charset=utf-8'");
+    try{
+        let html=fs.readFileSync(file).toString()
+        res.end(html)
+    }
+    catch(e){
+        res.end('<h4>404</h4>')
+    }
+});
+
+server.listen(3000)
