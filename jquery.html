@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box div,#box1 div{width:100px;height:100px;border:1px solid black;display:none}
+        .bG{background:red}
+    </style>
+    <script src="../../Jquery库和miaoTween/jquery-3.3.1.js"></script>
+    <script>
+        window.onload=function() {
+           function Fn1(box,div,button)
+           {
+               this.box=document.querySelector(box);
+               this.Divs=this.box.querySelectorAll(div);
+               this.Button=this.box.querySelectorAll(button);
+           }
+            Fn1.prototype.show=function(){
+                console.log(this)
+                let _this=this;
+                let tho=null;
+                let g=null;
+                for(let i=0;i<this.Divs.length;i++)
+                {
+                    this.Button[i].index=i;
+                    this.Button[i].onclick=function(){
+                        if(tho)
+                        {
+                            tho.style.cssText='display:none'
+                        }
+                        if(g)
+                        {
+                            g.className=''
+                        }
+                        _this.Divs[this.index].style.cssText='display:block';
+                        tho=_this.Divs[this.index];
+                        this.className='bG'
+                        g=this;
+                    }
+                }
+            }
+            let a=new Fn1('#box','div','button');
+            a.show()
+            function fn2()
+            {
+                Fn1.call(this,'#box1','div','button')
+            }
+            fn2.prototype=a
+
+            fn2.prototype.constructor=fn2;
+            let b=new fn2()
+            b.show()
+        }
+    </script>
+</head>
+<body>
+<ul>
+  <div id="box">
+      <div>div1</div>
+      <div>div2</div>
+      <div>div3</div>
+      <button>按钮1</button>
+      <button>按钮2</button>
+      <button>按钮3</button>
+  </div>
+    <div id="box1">
+        <div>div1</div>
+        <div>div2</div>
+        <div>div3</div>
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+    </div>
+</ul>
+</body>
+</html>
