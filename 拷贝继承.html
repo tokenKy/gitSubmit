@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拷贝继承</title>
+</head>
+<body>
+    <script>
+       function Parent(name,sex,age)
+       {
+           this.name=name;
+           this.sex=sex;
+           this.age=age
+       }
+        Parent.prototype.show=function(){
+            console.log(this.name+this.sex+this.age)
+        }
+        let parent=new Parent('父级','男','40')
+        parent.show()
+        console.log(parent)
+        //以上为父级构造函数
+        function Son()
+        {
+            Parent.call(this,'儿子','男','27')
+        }
+       exTends(Son.prototype,Parent.prototype)
+        Son.prototype.dis=function(){}
+       let son=new Son()
+
+       //以上为子构造函数
+       son.show()
+       console.log(son)
+        function exTends(obj1,obj2)
+        {
+            for(var attr in obj2)
+            {
+                obj1[attr]=obj2[attr]
+            }
+        }
+    </script>
+</body>
+</html>
