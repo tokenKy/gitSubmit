@@ -68,10 +68,10 @@
                const scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
                for(var i=0;i<imgArr.length;i++)
                {
-                   if(!im[i].isLoad && getTop(im[i])<scrollTop+document.documentElement.clientHeight)
+                   if(!im[i].isLoad && getTop(im[i])<scrollTop+document.documentElement.clientHeight) //如果img图片没有加载过并且img.offsetTop<滚动条滚动的高度+可视区的高度就是到了页面当中
                    {
-                       im[i].src=im[i].getAttribute('_dataSrc');
-                       im[i].isLoad=true;
+                       im[i].src=im[i].getAttribute('_dataSrc');            //就把_dataSrc给到src
+                       im[i].isLoad=true;                            //把没加载过的变为加载过，加载过的就不符合条件进不来了
                    }
                }
            }
@@ -83,7 +83,7 @@
                     obj=obj.offsetParent
                 }
                 return  iTop;
-            }
+            }   //这个函数就是获取img的top
         })()
     </script>
 </body>
