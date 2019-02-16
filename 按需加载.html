@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <script>
+        (function(){
+            const imgArr=[
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610923&di=befc1e3455b49691be133240ccc7dfd0&imgtype=0&src=http%3A%2F%2F09.imgmini.eastday.com%2Fmobile%2F20180326%2F20180326145058_9e96a0df505d0a66a6b1ff640307686a_2.jpeg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610920&di=2c624e130011ec02d71b408f995f39e9&imgtype=0&src=http%3A%2F%2Fupload.taihainet.com%2F2016%2F1107%2F1478526594706.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610916&di=e957fc4e5d29fece951ca5d638d26d88&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2F20171007%2Ff579-fymrqmq0568976.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610911&di=d675637e4013b3687b3a734d65eb08c8&imgtype=0&src=http%3A%2F%2Fimg.mshishang.com%2Fpics%2F2017%2F0504%2F20170504083420717.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610896&di=7f4928d61eee95d96a7b9b9b8a353378&imgtype=0&src=http%3A%2F%2Fs14.sinaimg.cn%2Fmw690%2F001okimity6GtqnVPvD1d%26690',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610895&di=e83510d8dec3abfc915f00a74d770e9e&imgtype=0&src=http%3A%2F%2Fvpic.video.qq.com%2F50285392%2Fz03513tq5p0_ori_3.jpg',
+                'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=203321301,2230150119&fm=26&gp=0.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610879&di=06a1b0fa75201a9f8ecfa9915d34906b&imgtype=0&src=http%3A%2F%2Fimg2015.zdface.com%2F20180428%2F29c05b4241cabcf7889b00db9df83d9c.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610874&di=238230306160530655c5f7d788fab559&imgtype=0&src=http%3A%2F%2Fwww.people.com.cn%2Fmediafile%2Fpic%2F20161206%2F60%2F733979734009415268.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327827651&di=bffdaa40436ae9396eee8b4b51ab6b2a&imgtype=0&src=http%3A%2F%2Fupload.northnews.cn%2F2012%2F0111%2F1326272104183.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327827648&di=7833416a24ec0eaf0b58c890f1558530&imgtype=0&src=http%3A%2F%2Fimg3.ph.126.net%2FkJWfY-QSU59hmSGf4EnsBw%3D%3D%2F2717922375135302313.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327827642&di=f27693faaf6669885220c2afcc3a0e2e&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2F20170208%2Fa503-fyafcyx7518123.jpg',
+                'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1972051811,761834733&fm=26&gp=0.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610923&di=befc1e3455b49691be133240ccc7dfd0&imgtype=0&src=http%3A%2F%2F09.imgmini.eastday.com%2Fmobile%2F20180326%2F20180326145058_9e96a0df505d0a66a6b1ff640307686a_2.jpeg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610920&di=2c624e130011ec02d71b408f995f39e9&imgtype=0&src=http%3A%2F%2Fupload.taihainet.com%2F2016%2F1107%2F1478526594706.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610916&di=e957fc4e5d29fece951ca5d638d26d88&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2F20171007%2Ff579-fymrqmq0568976.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610911&di=d675637e4013b3687b3a734d65eb08c8&imgtype=0&src=http%3A%2F%2Fimg.mshishang.com%2Fpics%2F2017%2F0504%2F20170504083420717.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610896&di=7f4928d61eee95d96a7b9b9b8a353378&imgtype=0&src=http%3A%2F%2Fs14.sinaimg.cn%2Fmw690%2F001okimity6GtqnVPvD1d%26690',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610895&di=e83510d8dec3abfc915f00a74d770e9e&imgtype=0&src=http%3A%2F%2Fvpic.video.qq.com%2F50285392%2Fz03513tq5p0_ori_3.jpg',
+                'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=203321301,2230150119&fm=26&gp=0.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610879&di=06a1b0fa75201a9f8ecfa9915d34906b&imgtype=0&src=http%3A%2F%2Fimg2015.zdface.com%2F20180428%2F29c05b4241cabcf7889b00db9df83d9c.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610874&di=238230306160530655c5f7d788fab559&imgtype=0&src=http%3A%2F%2Fwww.people.com.cn%2Fmediafile%2Fpic%2F20161206%2F60%2F733979734009415268.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327827651&di=bffdaa40436ae9396eee8b4b51ab6b2a&imgtype=0&src=http%3A%2F%2Fupload.northnews.cn%2F2012%2F0111%2F1326272104183.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327827648&di=7833416a24ec0eaf0b58c890f1558530&imgtype=0&src=http%3A%2F%2Fimg3.ph.126.net%2FkJWfY-QSU59hmSGf4EnsBw%3D%3D%2F2717922375135302313.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327827642&di=f27693faaf6669885220c2afcc3a0e2e&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2F20170208%2Fa503-fyafcyx7518123.jpg',
+                'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1972051811,761834733&fm=26&gp=0.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610923&di=befc1e3455b49691be133240ccc7dfd0&imgtype=0&src=http%3A%2F%2F09.imgmini.eastday.com%2Fmobile%2F20180326%2F20180326145058_9e96a0df505d0a66a6b1ff640307686a_2.jpeg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610920&di=2c624e130011ec02d71b408f995f39e9&imgtype=0&src=http%3A%2F%2Fupload.taihainet.com%2F2016%2F1107%2F1478526594706.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610916&di=e957fc4e5d29fece951ca5d638d26d88&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2F20171007%2Ff579-fymrqmq0568976.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610911&di=d675637e4013b3687b3a734d65eb08c8&imgtype=0&src=http%3A%2F%2Fimg.mshishang.com%2Fpics%2F2017%2F0504%2F20170504083420717.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610896&di=7f4928d61eee95d96a7b9b9b8a353378&imgtype=0&src=http%3A%2F%2Fs14.sinaimg.cn%2Fmw690%2F001okimity6GtqnVPvD1d%26690',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610895&di=e83510d8dec3abfc915f00a74d770e9e&imgtype=0&src=http%3A%2F%2Fvpic.video.qq.com%2F50285392%2Fz03513tq5p0_ori_3.jpg',
+                'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=203321301,2230150119&fm=26&gp=0.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610879&di=06a1b0fa75201a9f8ecfa9915d34906b&imgtype=0&src=http%3A%2F%2Fimg2015.zdface.com%2F20180428%2F29c05b4241cabcf7889b00db9df83d9c.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327610874&di=238230306160530655c5f7d788fab559&imgtype=0&src=http%3A%2F%2Fwww.people.com.cn%2Fmediafile%2Fpic%2F20161206%2F60%2F733979734009415268.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327827651&di=bffdaa40436ae9396eee8b4b51ab6b2a&imgtype=0&src=http%3A%2F%2Fupload.northnews.cn%2F2012%2F0111%2F1326272104183.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327827648&di=7833416a24ec0eaf0b58c890f1558530&imgtype=0&src=http%3A%2F%2Fimg3.ph.126.net%2FkJWfY-QSU59hmSGf4EnsBw%3D%3D%2F2717922375135302313.jpg',
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550327827642&di=f27693faaf6669885220c2afcc3a0e2e&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2F20170208%2Fa503-fyafcyx7518123.jpg',
+                'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1972051811,761834733&fm=26&gp=0.jpg'
+            ];
+            const body=document.body;
+            let i=0;
+            while(i<imgArr.length)
+            {
+                const img =document.createElement('img');
+                img.src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550328188101&di=41da002635a1c2389b249b36aa48ac6d&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fe23a0892f88db31852ea1e1c69e92271fca97416f816-hQJu70_fw658';
+                img.setAttribute('_dataSrc',imgArr[i]);
+                img.style.cssText='width:300px;height:200px;vertical-align:top;margin:5px 5px';
+                body.appendChild(img);
+                i++;
+            }
+            g();
+            window.onscroll=g;
+           function g()
+           {
+               const im=document.querySelectorAll('img');
+               const scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+               for(var i=0;i<imgArr.length;i++)
+               {
+                   if(!im[i].isLoad && getTop(im[i])<scrollTop+document.documentElement.clientHeight)
+                   {
+                       im[i].src=im[i].getAttribute('_dataSrc');
+                       im[i].isLoad=true;
+                   }
+               }
+           }
+            function getTop(obj)
+            {
+                var iTop=0;
+                while(obj){
+                    iTop+=obj.offsetTop;
+                    obj=obj.offsetParent
+                }
+                return  iTop;
+            }
+        })()
+    </script>
+</body>
+</html>
