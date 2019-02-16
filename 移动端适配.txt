@@ -1,0 +1,23 @@
+
+react移动端适配
+
+
+
+content="width=device-width,user-scalable=no"
+
+
+html{font-size:100/(页面的宽度/100)vw}
+
+
+默认样式：
+a,input,button{
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0)
+}
+input,button{
+    -webkit-appearance: none;
+    border-radius:0
+}
+body{
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: 100%
+}
