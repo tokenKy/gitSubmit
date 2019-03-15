@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,h3,ul{margin:0;padding: 0}
+        em{font-style:normal}
+        #IdCare{width:600px;margin:0 auto}
+        #header{height:30px;font:14px/30px '微软雅黑';text-align:center}
+        #header em{font-style:normal;text-align: right;display:inline-block}
+    </style>
+    <script>
+        const arr1=[
+            {
+                name:'刘伟',
+                sex:'男',
+                age:40,
+                office:"yes"
+            }
+        ]
+        //学习框架的必要，是学习他的设计思想，操作数据来更新dom
+    </script>
+</head>
+<body>
+    <section id="IdCare">
+       <div id="header">
+           <span>员工信息管理</span>
+
+       </div>
+    </section>
+<script>
+    let ul=document.createElement('ul');
+    console.log(ul)
+    function returnPt(MathTeam)
+    {
+        let html='';
+        MathTeam.forEach(function(item){
+            html+=`
+                <li>
+                    <span>${item.name}</span>
+                    <span>${item.sex}</span>
+                    <span>${item.age}</span>
+                    <em>${item.office==='yes'?'在职':'离职'}</em>
+                    <button>删除</button>
+                </li>
+            `;
+            ul.innerHTML=html;
+            document.body.appendChild(ul)
+        });
+
+        let office=document.querySelector('li em');
+        let button=document.querySelector('li button');
+        office.addEventListener('click',function(){
+            console.log(MathTeam[0].office);
+            if(MathTeam[0].office==='yes')
+            {
+                MathTeam[0].office='no';
+                returnPt(arr1)
+            }
+            else{
+                MathTeam[0].office='yes';
+                returnPt(arr1)
+            }
+        });
+        button.addEventListener('click',function(){
+            this.parentNode.remove()
+        })
+    }
+    returnPt(arr1)
+
+</script>
+</body>
+</html>
