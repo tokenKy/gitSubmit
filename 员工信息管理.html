@@ -17,8 +17,14 @@
                 sex:'男',
                 age:40,
                 office:"yes"
+            },
+            {
+                name:'小月',
+                sex:'女',
+                age:24,
+                office:"no"
             }
-        ]
+        ];
         //学习框架的必要，是学习他的设计思想，操作数据来更新dom
     </script>
 </head>
@@ -28,10 +34,20 @@
            <span>员工信息管理</span>
 
        </div>
+        <button class="btn">添加</button>
     </section>
 <script>
     let ul=document.createElement('ul');
-    console.log(ul)
+    const Btn=document.querySelector('.btn');
+    Btn.addEventListener('click',function(){
+       arr1.push({
+           name:'胡哥',
+           sex:'男',
+           age:45,
+           office:"no"});
+        returnPt(arr1)
+
+    });
     function returnPt(MathTeam)
     {
         let html='';
@@ -49,23 +65,29 @@
             document.body.appendChild(ul)
         });
 
-        let office=document.querySelector('li em');
-        let button=document.querySelector('li button');
-        office.addEventListener('click',function(){
-            console.log(MathTeam[0].office);
-            if(MathTeam[0].office==='yes')
-            {
-                MathTeam[0].office='no';
+        let office=document.querySelectorAll('li em');
+        let button=document.querySelectorAll('li button');
+        for(var i=0;i<office.length;i++)
+        {
+            office[i].index=i;
+            office[i].addEventListener('click',function(){
+                console.log(MathTeam[0].office);
+                if(MathTeam[this.index].office==='yes')
+                {
+                    MathTeam[this.index].office='no';
+                }
+                else{
+                    MathTeam[this.index].office='yes';
+                }
                 returnPt(arr1)
-            }
-            else{
-                MathTeam[0].office='yes';
-                returnPt(arr1)
-            }
-        });
-        button.addEventListener('click',function(){
-            this.parentNode.remove()
-        })
+            });
+        }
+        for(var j=0;j<office.length;j++)
+        {
+            button[j].addEventListener('click',function(){
+                this.parentNode.remove()
+            })
+        }
     }
     returnPt(arr1)
 
