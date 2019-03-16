@@ -84,8 +84,15 @@
         }
         for(var j=0;j<office.length;j++)
         {
+            button[j].index=j;
             button[j].addEventListener('click',function(){
-                this.parentNode.remove()
+                arr1.splice(this.index,1);
+                j--;
+                if(this.index===0)
+                {
+                    this.parentNode.remove()
+                }
+                returnPt(arr1)
             })
         }
     }
