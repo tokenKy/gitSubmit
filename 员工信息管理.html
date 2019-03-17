@@ -25,6 +25,7 @@
                 office:"no"
             }
         ];
+        let arr2=[];
         //学习框架的必要，是学习他的设计思想，操作数据来更新dom
     </script>
 </head>
@@ -35,23 +36,29 @@
 
        </div>
         <button class="btn">添加</button>
+        <button class="two">数组二</button>
     </section>
 <script>
     let ul=document.createElement('ul');
+    let p=null;
     const Btn=document.querySelector('.btn');
     Btn.addEventListener('click',function(){
        arr1.push({
-           name:'胡哥',
+           name:'刘青云',
            sex:'男',
            age:45,
-           office:"no"});
+           office:"no"
+                });
         returnPt(arr1)
 
     });
+    const str=document.body;
     function returnPt(MathTeam)
     {
+        console.log(MathTeam);
         let html='';
         MathTeam.forEach(function(item){
+            console.log(item,1);
             html+=`
                 <li>
                     <span>${item.name}</span>
@@ -62,7 +69,7 @@
                 </li>
             `;
             ul.innerHTML=html;
-            document.body.appendChild(ul)
+            str.appendChild(ul)
         });
 
         let office=document.querySelectorAll('li em');
@@ -79,25 +86,29 @@
                 else{
                     MathTeam[this.index].office='yes';
                 }
-                returnPt(arr1)
+                returnPt(MathTeam)
             });
         }
         for(var j=0;j<office.length;j++)
         {
             button[j].index=j;
             button[j].addEventListener('click',function(){
-                arr1.splice(this.index,1);
+                 p=MathTeam.splice(this.index,1); //splice方法返回的是删除元素的‘数组’
+                arr2.push(...p) //要想得到删除的元素就得把数组展开
                 j--;
                 if(this.index===0)
                 {
                     this.parentNode.remove()
                 }
-                returnPt(arr1)
+                returnPt(MathTeam)
             })
         }
     }
-    returnPt(arr1)
-
+    returnPt(arr1);
+const Two=document.querySelector('.two');
+    Two.addEventListener('click',function(){
+        returnPt(arr2);
+    })
 </script>
 </body>
 </html>
