@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var arr=[23,545,65,787,89,342,43435,6,676,87889,9809,6454,131,3435,6545653,67]
+    </script>
+</head>
+<body>
+   <script>
+       let a=0;
+       for(var i=0;i<arr.length;i++)                //先找到数组的每一项，每一项运行的时候里面的for循环执行一遍
+       {
+           for(var j=i+1;j<arr.length;j++)          //arr[i]与arr[i+1]的每一项进行比较
+           {
+               if(arr[i]>arr[j])                    //判断条件
+               {
+                  a=arr[j];                             //位置互换
+                   arr[j]=arr[i];
+                   arr[i]=a
+               }
+           }
+       }
+       console.log(arr)                         //(16) [6, 23, 65, 67, 89, 131, 342, 545, 676, 787, 3435, 6454, 9809, 43435, 87889, 6545653]
+   </script>
+</body>
+</html>
