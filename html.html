@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{margin:0}
+        button{margin-top:100px}
+    </style>
+</head>
+<body>
+<button>点一下</button>
+<button>点</button>
+<script>
+    const docu=document.body;
+    var arr=[0,1,2,3,4,5,6,7,8,9];
+    const Btn=document.querySelectorAll('button');
+    function ele(arr)
+    {
+        for(var i=0;i<arr.length;i++)
+        {
+            var a=document.createElement('a');
+            a.style.cssText=`width:100px;height:100px;background:red;position:absolute;left:${i*110}px;display:inline-block;text-decoration:none;text-align:center;line-height:100px;color:white`;
+            a.href='javascript:;';
+            a.innerText=arr[i];
+            docu.appendChild(a)
+        }
+    }
+    ele(arr);
+    Btn[0].addEventListener('click',function(){
+        arr.unshift(arr.pop());
+        ele(arr)
+    });
+    Btn[1].addEventListener('click',function(){
+        arr.push(arr.shift());
+        ele(arr)
+    })
+</script>
+</body>
+</html>

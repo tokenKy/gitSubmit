@@ -55,10 +55,8 @@
     const str=document.body;
     function returnPt(MathTeam)
     {
-        console.log(MathTeam);
         let html='';
         MathTeam.forEach(function(item){
-            console.log(item,1);
             html+=`
                 <li>
                     <span>${item.name}</span>
@@ -94,12 +92,16 @@
             button[j].index=j;
             button[j].addEventListener('click',function(){
                  p=MathTeam.splice(this.index,1); //splice方法返回的是删除元素的‘数组’
-                arr2.push(...p) //要想得到删除的元素就得把数组展开
+                if(MathTeam===arr1)
+                {
+                    arr2.push(...p)
+                }//要想得到删除的元素就得把数组展开
                 j--;
                 if(this.index===0)
                 {
                     this.parentNode.remove()
                 }
+                console.log(MathTeam)
                 returnPt(MathTeam)
             })
         }
