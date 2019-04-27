@@ -15,20 +15,20 @@
             'https://p1.jals1rfsfo.com/uploads/allimg/201812/749c18487ba94604.jpg',
             'https://p1.jals1rfsfo.com/uploads/allimg/201812/cfc5ad20c3072221.jpg'
         ];
-        let oImage=new Image();
+        var oImage=new Image();
         let i=0;
-        function g()
+        function g(arr)
         {
             oImage.src=arr[i];
             oImage.onload=function(){
                 i++;
                 if(i<arr.length)
                 {
-                    g()
+                    g(arr)
                 }
             }
         }
-        g()
+        g(arr)
     </script>
 </body>
 </html>
